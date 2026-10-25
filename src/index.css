@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  --color-fog: #dfe3e6;
+  --color-asphalt: #222a35;
+  --color-ink: #17202b;
+  --color-signal: #e4572e;
+  --color-lane: #f2f4f5;
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-body: "Instrument Sans", system-ui, sans-serif;
+}
+
+:root {
+  --road: clamp(200px, 32vw, 360px);
+}
+
+html {
+  background: var(--color-fog);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 60px dash + 60px gap = 120px period (must match DASH_PERIOD in Hero.jsx) */
+.road-dashes {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    var(--color-lane) 0 60px,
+    transparent 60px 120px
+  );
+}
